@@ -18,13 +18,16 @@ with open(election_data, newline = '') as csvfile:
         total_votes = total_votes + 1
 
 #The total number of votes per candidate
-    if row[2] in candidates:
+    if row in candidates:
         candidates.append(row[2])
         index = candidates.index(row[2])
         vote_count.append(1)
-    else:
+        print(index)
+
+    if row not in candidates:
+        candidates.append(row[2])
         index = candidates.index(row[2])
-        vote_count[index] += 1
+        vote_count.append(1)
    
 #Calculate percentage & winner of election
 
