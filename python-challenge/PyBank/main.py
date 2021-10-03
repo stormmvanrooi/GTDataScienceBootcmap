@@ -39,25 +39,25 @@ with open(budget_data, newline = '') as csvfile:
 
     # Calculate average
     average_change = sum(changes)/len(changes)   
-
+    
     #calculating the greatest increase
     if int(row[1]) > gi:
         gi = int(row[1])
         gim = row[0]
-            
+           
     #calculating the greatest decrease
     if int(row[1]) < gd:
         gd = int(row[1])
-        gdm = row[0]  
+        gdm = row[0]
 
     # printing all values
-    print("Financial Analysis")
-    print("_________________________________")
-    print("Total Months: " + str(total_months))
-    print("Total Amount: $" + str(net_profit))
-    print("Average Change: $",average_change)
-    print("Greatest Increase:", gim, "$",max(changes))
-    print("Greatest Decrease:", gdm, "$",min(changes))
+print("Financial Analysis")
+print("_________________________________")
+print("Total Months: " + str(total_months))
+print("Total Amount: $" + str(net_profit))
+print("Average Change: $",average_change)
+print("Greatest Increase:", gim, "$",max(changes))
+print("Greatest Decrease:", gdm, "$",min(changes))
 
 #write text file
 output_file = os.path.join("/Users/svanrooi/DataViz/python_challenge/PyBank/Resources/financial_analyst.txt")
@@ -66,8 +66,8 @@ with open(output_file, 'w',) as txt:
 
     txt.write("Financial Analysis\n")
     txt.write("_________________________________\n")
-    txt.write("Total Months: " + str(total_months))("\n")
-    txt.write("Total Amount: $" + str(net_profit))("\n")
-    txt.write("Average Change: $",average_change)("\n")
-    txt.write("Greatest Increase:", gim, "$",max(changes))("\n")
-    txt.write("Greatest Decrease:", gdm, "$",min(changes))("\n")
+    txt.write(f"Total Months: + ${total_months} \n")
+    txt.write(f"Total Amount: $ + ${net_profit}\n")
+    txt.write(f"Average Change: $,{average_change} \n")
+    txt.write(f"Greatest Increase:, {gim} ${max(changes)}\n")
+    txt.write(f"Greatest Decrease:, {gdm} ${min(changes)}\n")
